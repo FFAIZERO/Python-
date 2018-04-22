@@ -1,0 +1,34 @@
+方法1:（自己写的）
+L = []
+L2 = []
+L3 = []
+count = 0
+while True:
+    n = int(input("任意输入一些大于零的数,输入-1时结束输入："))
+    if n == -1:
+        break
+    L.append(n)
+print("这些数:",L)
+print("这些数的和是:",sum(L))
+for x in range(0,len(L)):
+    for y in range(x+1,len(L)):
+        if L[x] == L[y]:
+            count += 1
+    else:
+        if count == 1:    
+            L2.append(L[x])
+        elif count == 2:
+            L3.append(L[x])
+ 
+print(L2)
+print(sum(L2))    
+print(L3)   
+
+方法2
+for x in L:       # （列表去重）
+    if x not in L2:
+        L2.append(x)
+for x in L:
+    if L.count(x) == 2:    # 出现两次的数输出到L3
+        if x not in L3:
+            L3.append(x)
