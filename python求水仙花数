@@ -1,0 +1,20 @@
+  # 算出100～999以内的水仙花数（Narcissistic Number）
+  # 水仙花数是指百位的三次方加上十位的三次方
+  # 加上个位的三次方等于原数的数字
+  
+  
+ 方法1:
+for y in range(100,1000):
+    b = y // 100
+    s = y % 100 // 10
+    g = y % 10  # 取每位的数时也可以先转换为字符串，然后索引获取 str(y),取y[0],y[1],y[2]
+    a = b ** 3 + s ** 3 + g ** 3
+    if y == a:
+        print(y)
+
+方法2:
+for b in range(1,10):
+    for s in range(1,10):
+        for g in range(1,10):
+            if  == b ** 3 + s ** 3 + g ** 3:
+                print(b * 100 + s * 10 + g)
